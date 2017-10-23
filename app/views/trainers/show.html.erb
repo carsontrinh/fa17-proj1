@@ -4,5 +4,10 @@
 
 <p>Pokemon: <% @trainer.pokemons.each do |pokemon| %></p>
 <p><%= pokemon.name %> | lvl. <%= pokemon.level %> | health <%= pokemon.health %></p>
+<p><%= button_to "Damage!", damage_path(id: pokemon), :class => "button medium", :method => :patch %></p>
 
 <% end %>
+
+<p> Create a Pokemon </p>
+<%= button_to "Create New Pokemon", new_pokemon_path, :class => "button large", :method => :get %>
+<!--Not sure why we call new...-->
